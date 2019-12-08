@@ -1,0 +1,76 @@
+.controls {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+%control {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  @include lg-min {
+    cursor: pointer;
+  }
+}
+
+.control {
+  &-pause {
+    top: calc(50% - 20vh);
+    left: calc(50% - 20vh);
+
+    height: 40vh;
+    padding: 0;
+
+    transition: opacity 0.25s ease-out;
+
+    opacity: 0;
+
+    @extend %control;
+
+    &:hover,
+    &:focus {
+      transition: opacity 1s ease-in 0.7s;
+
+      opacity: 1;
+      text-shadow: 0 0 80px rgba($color-lemon, 0.6);
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    width: 10%;
+
+    @extend %control;
+
+    &:hover,
+    &:focus {
+      color: $color-light;
+      background: linear-gradient(to right, rgba($color-light, 0.4), rgba($color-light, 0));
+      text-shadow: 0 0 10px $color-lemon;
+    }
+  }
+
+  &-next {
+    right: 0;
+
+    width: 10%;
+
+    @extend %control;
+
+    &:hover,
+    &:focus {
+      color: $color-light;
+      background: linear-gradient(to left, rgba($color-light, 0.4), rgba($color-light, 0));
+      text-shadow: 0 0 10px $color-lemon;
+    }
+  }
+}

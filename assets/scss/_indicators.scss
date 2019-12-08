@@ -1,0 +1,41 @@
+.indicators {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+
+  display: flex;
+
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  justify-content: center;
+}
+
+.indicator {
+  width: 30px;
+  height: 30px;
+  margin: -40px 7.5px 0;
+
+  border: 3px solid rgba($color-lemon, 0.4);
+  border-radius: 50%;
+  outline: none;
+  background: none;
+  background-clip: padding-box;
+
+  @include lg-min {
+    cursor: pointer;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    border-color: $color-lemon;
+    box-shadow: 0 0 10px $color-lemon;
+  }
+}

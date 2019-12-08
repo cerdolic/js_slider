@@ -1,0 +1,178 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+.fa-angle-left,
+.fa-angle-right {
+  color: rgba(240, 252, 79, 0.4);
+  font-size: 120px;
+}
+
+.fa-play-circle,
+.fa-pause-circle {
+  color: rgba(240, 252, 79, 0.4);
+  font-size: 40vh;
+}
+
+.slides {
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background: #f7f8f0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 0;
+  background-position: 50% 50%;
+  background-size: cover;
+  font-size: 40px;
+}
+
+.slide a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.slide.active {
+  z-index: 1;
+  opacity: 1;
+}
+
+.controls {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.control-pause, .control-prev, .control-next {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.control-pause {
+  top: calc(50% - 20vh);
+  left: calc(50% - 20vh);
+  height: 40vh;
+  padding: 0;
+  -webkit-transition: opacity 0.25s ease-out;
+  -o-transition: opacity 0.25s ease-out;
+  transition: opacity 0.25s ease-out;
+  opacity: 0;
+}
+
+.control-pause:hover, .control-pause:focus {
+  -webkit-transition: opacity 1s ease-in 0.7s;
+  -o-transition: opacity 1s ease-in 0.7s;
+  transition: opacity 1s ease-in 0.7s;
+  opacity: 1;
+  text-shadow: 0 0 80px rgba(240, 252, 79, 0.6);
+}
+
+.control-prev {
+  left: 0;
+  width: 10%;
+}
+
+.control-prev:hover, .control-prev:focus {
+  color: #f7f8f0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(247, 248, 240, 0.4)), to(rgba(247, 248, 240, 0)));
+  background: -o-linear-gradient(left, rgba(247, 248, 240, 0.4), rgba(247, 248, 240, 0));
+  background: linear-gradient(to right, rgba(247, 248, 240, 0.4), rgba(247, 248, 240, 0));
+  text-shadow: 0 0 10px #f0fc4f;
+}
+
+.control-next {
+  right: 0;
+  width: 10%;
+}
+
+.control-next:hover, .control-next:focus {
+  color: #f7f8f0;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(247, 248, 240, 0.4)), to(rgba(247, 248, 240, 0)));
+  background: -o-linear-gradient(right, rgba(247, 248, 240, 0.4), rgba(247, 248, 240, 0));
+  background: linear-gradient(to left, rgba(247, 248, 240, 0.4), rgba(247, 248, 240, 0));
+  text-shadow: 0 0 10px #f0fc4f;
+}
+
+.indicators {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.indicator {
+  width: 30px;
+  height: 30px;
+  margin: -40px 7.5px 0;
+  border: 3px solid rgba(240, 252, 79, 0.4);
+  border-radius: 50%;
+  outline: none;
+  background: none;
+  background-clip: padding-box;
+}
+
+.indicator:hover {
+  cursor: pointer;
+}
+
+.indicator.active {
+  border-color: #f0fc4f;
+  -webkit-box-shadow: 0 0 10px #f0fc4f;
+          box-shadow: 0 0 10px #f0fc4f;
+}
+
+@media (min-width: 992px) {
+  .control-pause, .control-prev, .control-next {
+    cursor: pointer;
+  }
+  .indicator {
+    cursor: pointer;
+  }
+}
